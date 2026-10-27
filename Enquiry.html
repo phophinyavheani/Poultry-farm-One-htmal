@@ -1,43 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Nyavhas M Poultry Farm | Enquiry</title>
+
     <meta name="description"
-          content="Ask Nyavhas M Poultry Farm about eggs, live chickens and cleaned chicken in Thononda Village, Limpopo. Submit a poultry product enquiry.">
+          content="Ask Nyavhas M Poultry Farm about fresh eggs, live chickens and cleaned chicken in Thononda Village, Limpopo.">
 
     <meta name="keywords"
-          content="poultry product enquiry, egg prices enquiry, chicken availability, poultry farm Thononda, Nyavhas M Poultry Farm">
+          content="poultry product enquiry, fresh eggs, live chickens, cleaned chicken, poultry farm Thononda, Nyavhas M Poultry Farm">
 
     <meta name="robots" content="index, follow">
-
     <meta name="author" content="Nyavhas M Poultry Farm">
 
-     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body  style="background-color: blanchedalmond;">
-
+<body style="background-color: blanchedalmond;">
 
     <!-- Website Header -->
-    <header><img src="image/nyavhas_m_poultry_farm_logo_fixed2.png" alt="Nyavhas M Poultry Farm business logo" width="300">
+    <header>
+        <img src="image/nyavhas_m_poultry_farm_logo_fixed2.png"
+             alt="Nyavhas M Poultry Farm business logo"
+             width="300">
 
         <h1>Nyavhas M Poultry Farm</h1>
 
         <!-- Navigation Menu -->
         <nav>
-            <a href="index.html">Home</a> 
-            <a href="about.html">About Us</a> 
-            <a href="products.html">Products</a> 
-            <a href="enquiry.html">Enquiry</a> 
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="enquiry.html" aria-current="page">Enquiry</a>
             <a href="contact.html">Contact</a>
         </nav>
-
     </header>
 
     <!-- Main Content -->
@@ -45,82 +45,122 @@
 
         <!-- Page Introduction -->
         <section>
-
             <h2>Product Enquiry Form</h2>
 
             <p>
                 Complete the form below to enquire about our poultry products.
-                We will contact you as soon as possible regarding your request.
+                We will contact you regarding your request.
+                Fields marked with * are compulsory.
             </p>
-
         </section>
 
         <!-- Enquiry Form -->
         <section>
 
             <form id="enquiry-form"
-      class="validated-form"
-      data-form-type="enquiry"
-      action="#"
-      method="post">
+                  class="validated-form"
+                  data-form-type="enquiry"
+                  action="#"
+                  method="post">
 
                 <fieldset>
-
                     <legend>Customer Information</legend>
 
                     <p>
-                        <label for="fullname">Full Name:</label><br>
-                        <input type="text" id="fullname" name="fullname">
+                        <label for="fullname">Full Name: *</label><br>
+
+                        <input type="text"
+                               id="fullname"
+                               name="fullname"
+                               autocomplete="name"
+                               minlength="2"
+                               maxlength="80"
+                               required>
+
+                        <small id="fullname-error"
+                               class="error-message"></small>
                     </p>
 
                     <p>
-                        <label for="email">Email Address:</label><br>
-                        <input type="email" id="email" name="email">
+                        <label for="email">Email Address: *</label><br>
+
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               autocomplete="email"
+                               maxlength="100"
+                               required>
+
+                        <small id="email-error"
+                               class="error-message"></small>
                     </p>
 
                     <p>
-                        <label for="phone">Phone Number:</label><br>
-                        <input type="tel" id="phone" name="phone">
-                    </p>
+                        <label for="phone">Phone Number: *</label><br>
 
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               autocomplete="tel"
+                               placeholder="0712345678"
+                               pattern="(\+27|0)[0-9]{9}"
+                               title="Enter a South African phone number, e.g. 0712345678 or +27712345678"
+                               required>
+
+                        <small id="phone-error"
+                               class="error-message"></small>
+                    </p>
                 </fieldset>
 
                 <br>
 
                 <fieldset>
-
                     <legend>Product Details</legend>
 
                     <p>
-                        <label for="product">Select Product:</label><br>
+                        <label for="product">Select Product: *</label><br>
 
-                        <select id="product" name="product">
-
+                        <select id="product" name="product" required>
                             <option value="">--Choose a Product--</option>
-                            <option>Fresh Eggs</option>
-                            <option>Live Chickens</option>
-                            <option>Cleaned Chicken</option>
-
+                            <option value="Fresh Eggs">Fresh Eggs</option>
+                            <option value="Live Chickens">Live Chickens</option>
+                            <option value="Cleaned Chicken">Cleaned Chicken</option>
                         </select>
 
+                        <small id="product-error"
+                               class="error-message"></small>
                     </p>
 
                     <p>
-                        <label for="quantity">Quantity Required:</label><br>
-                        <input type="number" id="quantity" name="quantity">
+                        <label for="quantity">Quantity Required: *</label><br>
+
+                        <input type="number"
+                               id="quantity"
+                               name="quantity"
+                               min="1"
+                               max="10000"
+                               step="1"
+                               required>
+
+                        <small id="quantity-error"
+                               class="error-message"></small>
                     </p>
 
                     <p>
                         <label for="date">Preferred Collection Date:</label><br>
-                        <input type="date" id="date" name="date">
-                    </p>
 
+                        <input type="date"
+                               id="date"
+                               name="date">
+
+                        <small id="date-error"
+                               class="error-message"></small>
+                    </p>
                 </fieldset>
 
                 <br>
 
                 <fieldset>
-
                     <legend>Additional Information</legend>
 
                     <p>
@@ -129,32 +169,37 @@
                         <textarea id="message"
                                   name="message"
                                   rows="6"
-                                  cols="50"></textarea>
+                                  cols="50"
+                                  maxlength="1000"
+                                  placeholder="Ask about prices, availability or collection."></textarea>
 
+                        <small id="message-error"
+                               class="error-message"></small>
                     </p>
-
                 </fieldset>
 
                 <br>
 
                 <input type="submit" value="Submit Enquiry">
-
                 <input type="reset" value="Clear Form">
 
+                <!-- JavaScript feedback -->
+                <p id="enquiry-status"
+                   role="status"
+                   aria-live="polite"></p>
+
             </form>
-
         </section>
-
     </main>
 
     <!-- Website Footer -->
     <footer>
-
-        &copy;  ST10514166#DISD1 Nyavhas M POULTRY FEARM FILE ONE
-
+        &copy; <span id="current-year">2026</span>
+        ST10514166#DISD1 Nyavhas M Poultry Farm. All rights reserved.
     </footer>
-<script src="js/script.js" defer></script>
+
+    <!-- JavaScript File -->
+    <script src="js/script.js" defer></script>
+
 </body>
-
 </html>
-
