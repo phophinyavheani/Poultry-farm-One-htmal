@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // 2. Product search and category filter
+    //  Product search and category filter
     const searchInput = document.getElementById("product-search");
     const categoryFilter = document.getElementById("category-filter");
     const productCards = Array.from(
