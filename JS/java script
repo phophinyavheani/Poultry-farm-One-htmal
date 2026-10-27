@@ -1,0 +1,344 @@
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    //  Update the copyright year automatically
+    const year = document.getElementById("current-year");
+
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+
+
+    // 2. Product search and category filter
+    const searchInput = document.getElementById("product-search");
+    const categoryFilter = document.getElementById("category-filter");
+    const productCards = Array.from(
+        document.querySelectorAll(".product-card")
+    );
+    const noProducts = document.getElementById("no-products");
+    const productCount = document.getElementById("product-count");
+
+    function filterProducts() {
+        if (!searchInput || !categoryFilter) return;
+
+        const term = searchInput.value.trim().toLowerCase();
+        const category = categoryFilter.value;
+        let visible = 0;
+
+        productCards.forEach(card => {
+            const productName = (
+                card.dataset.name || card.textContent
+            ).toLowerCase();
+
+            const matchesSearch = productName.includes(term);
+
+            const matchesCategory =
+                category === "all" ||
+                card.dataset.category === category;
+
+            const show = matchesSearch && matchesCategory;
+
+            card.hidden = !show;
+
+            if (show) {
+                visible++;
+            }
+        });
+
+        if (noProducts) {
+            noProducts.hidden = visible !== 0;
+        }
+
+        if (productCount) {
+            productCount.textContent =
+                `Showing ${visible} of ${productCards.length} products`;
+        }
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener("input", filterProducts);
+    }
+
+    if (categoryFilter) {
+        categoryFilter.addEventListener("change", filterProducts);
+    }
+
+
+    //  Select a product automatically from an enquiry link
+    const productSelect = document.getElementById("product");
+
+    if (productSelect) {
+        const parameters = new URLSearchParams(window.location.search);
+        const requestedProduct = parameters.get("product");
+
+        if (requestedProduct) {
+            const option = Array.from(productSelect.options).find(item =>
+                item.text.toLowerCase() === requestedProduct.toLowerCase()
+            );
+
+            if (option) {
+                productSelect.value = option.value;
+            }
+        }
+
+        // Prevent selecting a collection date in the past
+        const dateInput = document.getElementById("date");
+
+        if (dateInput) {
+            const today = new Date();
+            const localDate = new Date(
+                today.getTime() - today.getTimezoneOffset() * 60000
+            ).toISOString().split("T")[0];
+
+            dateInput.min = localDate;
+        }
+    }
+
+
+    //  Image gallery lightbox
+    const lightbox = document.getElementById("image-lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const closeLightbox = document.getElementById("close-lightbox");
+
+    let previousFocus = null;
+
+    function closeViewer() {
+        if (!lightbox) return;
+
+        lightbox.hidden = true;
+        document.body.classList.remove("no-scroll");
+
+        if (previousFocus) {
+            previousFocus.focus();
+        }
+    }
+
+    document.querySelectorAll("[data-lightbox]").forEach(button => {
+        button.addEventListener("click", () => {
+            if (!lightbox || !lightboxImage) return;
+
+            previousFocus = button;
+
+            lightboxImage.src = button.dataset.lightbox;
+            lightboxImage.alt =
+                button.dataset.alt || "Enlarged product image";
+
+            lightbox.hidden = false;
+            document.body.classList.add("no-scroll");
+
+            if (closeLightbox) {
+                closeLightbox.focus();
+            }
+        });
+    });
+
+    if (closeLightbox) {
+        closeLightbox.addEventListener("click", closeViewer);
+    }
+
+    if (lightbox) {
+        lightbox.addEventListener("click", event => {
+            if (event.target === lightbox) {
+                closeViewer();
+            }
+        });
+    }
+
+    // Close the image when the Escape key is pressed
+    document.addEventListener("keydown", event => {
+        if (
+            event.key === "Escape" &&
+            lightbox &&
+            !lightbox.hidden
+        ) {
+            closeViewer();
+        }
+    });
+
+
+    //  Reveal animations when sections enter the screen
+    const revealItems = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+
+        revealItems.forEach(item => observer.observe(item));
+    } else {
+        revealItems.forEach(item => {
+            item.classList.add("visible");
+        });
+    }
+
+
+    //  Contact and enquiry form validation
+    // Confirm this email address with the business owner.
+    const recipient = "popzela@67gmai.com";
+
+    document.querySelectorAll(".validated-form").forEach(form => {
+
+        const status = document.getElementById(
+            form.id === "enquiry-form"
+                ? "enquiry-status"
+                : "contact-status"
+        );
+
+        // Clear validation errors when a customer edits a field
+        function clearFieldError(field) {
+            field.removeAttribute("aria-invalid");
+
+            const error = document.getElementById(
+                `${field.id}-error`
+            );
+
+            if (error) {
+                error.textContent = "";
+            }
+        }
+
+        // Display a validation error beside the field
+        function showFieldError(field, message) {
+            field.setAttribute("aria-invalid", "true");
+
+            const error = document.getElementById(
+                `${field.id}-error`
+            );
+
+            if (error) {
+                error.textContent = message;
+            }
+        }
+
+        form.querySelectorAll("input, select, textarea").forEach(field => {
+            field.addEventListener("input", () => {
+                clearFieldError(field);
+            });
+
+            field.addEventListener("change", () => {
+                clearFieldError(field);
+            });
+        });
+
+        // Clear errors when the form is reset
+        form.addEventListener("reset", () => {
+            window.setTimeout(() => {
+                form.querySelectorAll(
+                    "input, select, textarea"
+                ).forEach(clearFieldError);
+
+                if (status) {
+                    status.textContent = "";
+                }
+            }, 0);
+        });
+
+        // Validate the form before preparing the email
+        form.addEventListener("submit", event => {
+            event.preventDefault();
+
+            let valid = true;
+
+            const fields = Array.from(
+                form.querySelectorAll("input, select, textarea")
+            );
+
+            fields.forEach(field => {
+                clearFieldError(field);
+
+                if (!field.checkValidity()) {
+                    valid = false;
+
+                    let message = "Please check this field.";
+
+                    if (field.validity.valueMissing) {
+                        message = "This field is required.";
+                    } else if (field.validity.typeMismatch) {
+                        message = "Please enter a valid email address.";
+                    } else if (field.validity.patternMismatch) {
+                        message = "Please enter a valid phone number.";
+                    } else if (field.validity.rangeUnderflow) {
+                        message =
+                            "Please enter a quantity of at least 1 or choose a future date.";
+                    } else if (field.validity.tooShort) {
+                        message =
+                            `Please enter at least ${field.minLength} characters.`;
+                    }
+
+                    showFieldError(field, message);
+                }
+            });
+
+            if (!valid) {
+                if (status) {
+                    status.textContent =
+                        "Please correct the highlighted fields before continuing.";
+                }
+
+                const firstInvalid = form.querySelector(
+                    '[aria-invalid="true"]'
+                );
+
+                if (firstInvalid) {
+                    firstInvalid.focus();
+                }
+
+                return;
+            }
+
+            // Collect the form information
+            const data = new FormData(form);
+
+            let subject;
+            let body;
+
+            // Prepare the poultry product enquiry email
+            if (form.dataset.formType === "enquiry") {
+                subject =
+                    `Poultry product enquiry: ${data.get("product")}`;
+
+                body =
+                    `Customer name: ${data.get("fullname")}\n` +
+                    `Email: ${data.get("email")}\n` +
+                    `Phone: ${data.get("phone")}\n` +
+                    `Product: ${data.get("product")}\n` +
+                    `Quantity: ${data.get("quantity")}\n` +
+                    `Preferred collection date: ${data.get("date") || "Not specified"}\n` +
+                    `Additional details: ${data.get("message") || "None"}`;
+
+            } else {
+                // Prepare the general contact email
+                subject =
+                    `Website contact: ${data.get("subject")}`;
+
+                body =
+                    `Name: ${data.get("name")}\n` +
+                    `Email: ${data.get("email")}\n` +
+                    `Phone: ${data.get("phone") || "Not provided"}\n` +
+                    `Message type: ${data.get("subject")}\n` +
+                    `Message:\n${data.get("message")}`;
+            }
+
+            if (status) {
+                status.textContent =
+                    "Your email draft is ready. Review the details in your email application and press Send.";
+            }
+
+            // Open the visitor's default email application
+            const mailto =
+                `mailto:${recipient}` +
+                `?subject=${encodeURIComponent(subject)}` +
+                `&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailto;
+        });
+    });
+
+});
