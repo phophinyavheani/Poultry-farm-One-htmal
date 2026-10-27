@@ -240,105 +240,135 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 0);
         });
 
-        // Validate the form before preparing the email
-        form.addEventListener("submit", event => {
-            event.preventDefault();
+      
+/ Validate enquiry and contact forms */
 
-            let valid = true;
+const recipient = "YOUR-BUSINESS-EMAIL@example.com";
 
-            const fields = Array.from(
-                form.querySelectorAll("input, select, textarea")
-            );
 
-            fields.forEach(field => {
-                clearFieldError(field);
+document.querySelectorAll(".validated-form").forEach(form => {
+    const status = document.getElementById(
+        form.id === "enquiry-form"
+            ? "enquiry-status"
+            : "contact-status"
+    );
 
-                if (!field.checkValidity()) {
-                    valid = false;
+    function clearError(field) {
+        field.removeAttribute("aria-invalid");
 
-                    let message = "Please check this field.";
+        const error = document.getElementById(field.id + "-error");
+        if (error) error.textContent = "";
+    }
 
-                    if (field.validity.valueMissing) {
-                        message = "This field is required.";
-                    } else if (field.validity.typeMismatch) {
-                        message = "Please enter a valid email address.";
-                    } else if (field.validity.patternMismatch) {
-                        message = "Please enter a valid phone number.";
-                    } else if (field.validity.rangeUnderflow) {
-                        message =
-                            "Please enter a quantity of at least 1 or choose a future date.";
-                    } else if (field.validity.tooShort) {
-                        message =
-                            `Please enter at least ${field.minLength} characters.`;
-                    }
+    function showError(field, message) {
+        field.setAttribute("aria-invalid", "true");
 
-                    showFieldError(field, message);
-                }
-            });
+        const error = document.getElementById(field.id + "-error");
+        if (error) error.textContent = message;
+    }
 
-            if (!valid) {
-                if (status) {
-                    status.textContent =
-                        "Please correct the highlighted fields before continuing.";
-                }
-
-                const firstInvalid = form.querySelector(
-                    '[aria-invalid="true"]'
-                );
-
-                if (firstInvalid) {
-                    firstInvalid.focus();
-                }
-
-                return;
-            }
-
-            // Collect the form information
-            const data = new FormData(form);
-
-            let subject;
-            let body;
-
-            // Prepare the poultry product enquiry email
-            if (form.dataset.formType === "enquiry") {
-                subject =
-                    `Poultry product enquiry: ${data.get("product")}`;
-
-                body =
-                    `Customer name: ${data.get("fullname")}\n` +
-                    `Email: ${data.get("email")}\n` +
-                    `Phone: ${data.get("phone")}\n` +
-                    `Product: ${data.get("product")}\n` +
-                    `Quantity: ${data.get("quantity")}\n` +
-                    `Preferred collection date: ${data.get("date") || "Not specified"}\n` +
-                    `Additional details: ${data.get("message") || "None"}`;
-
-            } else {
-                // Prepare the general contact email
-                subject =
-                    `Website contact: ${data.get("subject")}`;
-
-                body =
-                    `Name: ${data.get("name")}\n` +
-                    `Email: ${data.get("email")}\n` +
-                    `Phone: ${data.get("phone") || "Not provided"}\n` +
-                    `Message type: ${data.get("subject")}\n` +
-                    `Message:\n${data.get("message")}`;
-            }
-
-            if (status) {
-                status.textContent =
-                    "Your email draft is ready. Review the details in your email application and press Send.";
-            }
-
-            // Open the visitor's default email application
-            const mailto =
-                `mailto:${recipient}` +
-                `?subject=${encodeURIComponent(subject)}` +
-                `&body=${encodeURIComponent(body)}`;
-
-            window.location.href = mailto;
-        });
+    form.querySelectorAll("input, select, textarea").forEach(field => {
+        field.addEventListener("input", () => clearError(field));
+        field.addEventListener("change", () => clearError(field));
     });
 
+    form.addEventListener("reset", () => {
+        setTimeout(() => {
+            form.querySelectorAll("input, select, textarea")
+                .forEach(clearError);
+
+            if (status) status.textContent = "";
+        }, 0);
+    });
+
+    form.addEventListener("submit", event => {
+        event.preventDefault();
+
+        let isValid = true;
+        let firstInvalid = null;
+
+        form.querySelectorAll("input, select, textarea").forEach(field => {
+            clearError(field);
+
+            if (!field.checkValidity()) {
+                isValid = false;
+
+                if (!firstInvalid) firstInvalid = field;
+
+                let message = "Please check this field.";
+
+                if (field.validity.valueMissing) {
+                    message = "This field is required.";
+                } else if (field.validity.typeMismatch) {
+                    message = "Please enter a valid email address.";
+                } else if (field.validity.patternMismatch) {
+                    message = "Enter a valid South African phone number, e.g. 0712345678 or +27712345678.";
+                } else if (field.validity.tooShort) {
+                    message = "Please enter more information.";
+                } else if (field.validity.rangeUnderflow) {
+                    message = "Please enter a valid quantity or future date.";
+                }
+
+                showError(field, message);
+            }
+        });
+
+        if (!isValid) {
+            if (status) {
+                status.textContent =
+                    "Please correct the errors above and try again.";
+            }
+
+            firstInvalid.focus();
+            return;
+        }
+
+        const data = new FormData(form);
+        let subject;
+        let body;
+
+        if (form.dataset.formType === "enquiry") {
+            subject = "Poultry Product Enquiry";
+
+            body =
+                "Customer name: " + data.get("fullname") + "\n" +
+                "Email: " + data.get("email") + "\n" +
+                "Phone: " + data.get("phone") + "\n" +
+                "Product: " + data.get("product") + "\n" +
+                "Quantity: " + data.get("quantity") + "\n" +
+                "Preferred collection date: " +
+                    (data.get("date") || "Not specified") + "\n" +
+                "Additional details: " +
+                    (data.get("message") || "None");
+        } else {
+            subject = "Website Contact: " + data.get("subject");
+
+            body =
+                "Customer name: " + data.get("name") + "\n" +
+                "Email: " + data.get("email") + "\n" +
+                "Phone: " + (data.get("phone") || "Not provided") + "\n" +
+                "Message type: " + data.get("subject") + "\n" +
+                "Message: " + data.get("message");
+        }
+
+        if (!recipient || recipient.includes("example.com")) {
+            if (status) {
+                status.textContent =
+                    "The form is valid, but the business email address must be configured before sending.";
+            }
+            return;
+        }
+
+        if (status) {
+            status.textContent =
+                "Your email draft is opening. Review it and press Send in your email application.";
+        }
+
+        const mailto =
+            "mailto:" + recipient +
+            "?subject=" + encodeURIComponent(subject) +
+            "&body=" + encodeURIComponent(body);
+
+        window.location.href = mailto;
+    });
 });
