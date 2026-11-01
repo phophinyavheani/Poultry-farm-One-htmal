@@ -120,29 +120,210 @@
 
         </section>
 
-        <!-- Why Choose Us -->
-        <section>
+        
+        <!-- Our Farm Image Gallery -->
+        <section class="farm-gallery-section" id="farm-gallery">
 
-            <h2>Why Choose Nyavhas M Poultry Farm?</h2>
+            <h2>Our Farm Gallery</h2>
 
-            <ol>
-                <li>Fresh, high-quality poultry products.</li>
-                <li>Affordable prices.</li>
-                <li>Friendly customer service.</li>
-                <li>Reliable local supplier.</li>
-                <li>Serving the community since 2022.</li>
-            </ol>
+            <p class="gallery-intro">
+                Take a closer look at our poultry products and farm.
+                Click any picture to view it in a larger size.
+            </p>
 
+            <div class="farm-gallery">
+
+                <!-- Fresh Eggs -->
+                <button class="gallery-item" type="button"
+                        data-index="0"
+                        aria-label="View fresh eggs">
+                    <img src="image/B.webp"
+                         alt="Fresh eggs from Nyavhas M Poultry Farm"
+                         loading="lazy">
+                    <span>Fresh Eggs</span>
+                </button>
+
+                <!-- Live Chickens -->
+                <button class="gallery-item" type="button"
+                        data-index="1"
+                        aria-label="View live chickens">
+                    <img src="image/A.webp"
+                         alt="Live chickens from Nyavhas M Poultry Farm"
+                         loading="lazy">
+                    <span>Live Chickens</span>
+                </button>
+
+                <!-- Cleaned Chicken -->
+                <button class="gallery-item" type="button"
+                        data-index="2"
+                        aria-label="View cleaned chicken">
+                    <img src="image/c.webp"
+                         alt="Cleaned ready-to-cook chicken"
+                         loading="lazy">
+                    <span>Cleaned Chicken</span>
+                </button>
+
+                <!-- Farm Logo -->
+                <button class="gallery-item" type="button"
+                        data-index="3"
+                        aria-label="View farm logo">
+                    <img src="image/nyavhas_m_poultry_farm_logo_fixed2.png"
+                         alt="Nyavhas M Poultry Farm logo"
+                         loading="lazy">
+                    <span>Our Farm</span>
+                </button>
+
+            </div>
         </section>
+
+        <!-- Image Lightbox -->
+        <div class="farm-lightbox"
+             id="farm-lightbox"
+             role="dialog"
+             aria-modal="true"
+             aria-label="Enlarged image viewer"
+             aria-hidden="true"
+             hidden>
+
+            <button class="lightbox-close"
+                    id="lightbox-close"
+                    type="button"
+                    aria-label="Close image viewer">&times;</button>
+
+            <button class="lightbox-prev"
+                    id="lightbox-prev"
+                    type="button"
+                    aria-label="Previous image">&#10094;</button>
+
+            <figure class="lightbox-figure">
+                <img id="lightbox-image" src="" alt="">
+                <figcaption id="lightbox-caption"></figcaption>
+            </figure>
+
+            <button class="lightbox-next"
+                    id="lightbox-next"
+                    type="button"
+                    aria-label="Next image">&#10095;</button>
+
+            <p class="lightbox-help">
+                Use the arrows to browse. Press Escape to close.
+            </p>
+
+        </div>
+
  
     </main>
 
-    <!-- Footer -->
-    <footer>
+    
+<!-- Website Footer -->
+<footer class="site-footer">
 
-        <p>&copy; ST10514166#DISD1 Nyavhas M POULTRY FEARM FILE ONE
+    <div class="footer-container">
 
-    </footer>
+        <!-- Logo and Newsletter -->
+        <div class="footer-newsletter">
+
+            <img src="image/nyavhas_m_poultry_farm_logo_fixed2.png"
+                 alt="Nyavhas M Poultry Farm Logo"
+                 class="footer-logo">
+
+            <h3>STAY CONNECTED WITH US</h3>
+
+            <p>
+                Subscribe to receive updates about our fresh eggs,
+                chickens and poultry products.
+            </p>
+
+            <form class="newsletter-form" id="newsletter-form">
+
+                <input type="email"
+                       id="newsletter-email"
+                       placeholder="Enter your email"
+                       aria-label="Email address"
+                       required>
+
+                <button type="submit">Submit</button>
+
+            </form>
+
+            <small id="newsletter-status" role="status"></small>
+
+            <p class="newsletter-privacy">
+                By providing your email, you agree to receive
+                updates from Nyavhas M Poultry Farm.
+                You may unsubscribe at any time.
+            </p>
+
+        </div>
+
+        <!-- About Us -->
+        <div class="footer-column">
+
+            <h3>ABOUT US</h3>
+
+            <a href="about.html">Our Story</a>
+            <a href="about.html">Our Farm</a>
+            <a href="products.html">Our Products</a>
+            <a href="contact.html">Visit Our Farm</a>
+
+        </div>
+
+        <!-- Support -->
+        <div class="footer-column">
+
+            <h3>SUPPORT</h3>
+
+            <a href="contact.html">Contact Us</a>
+            <a href="enquiry.html">Product Enquiries</a>
+            <a href="products.html">Product Information</a>
+            <a href="contact.html">Customer Assistance</a>
+
+        </div>
+
+        <!-- Get in Touch -->
+        <div class="footer-column">
+
+            <h3>GET IN TOUCH</h3>
+
+            <p>
+                <strong>Email:</strong><br>
+                <a href="mailto:popzela@67gmai.com">
+                    popzela@67gmai.com
+                </a>
+            </p>
+
+            <p>
+                <strong>Phone:</strong><br>
+                Add your farm phone number
+            </p>
+
+            <p>
+                Monday – Friday: 08:00 – 17:00<br>
+                Saturday: 08:00 – 13:00<br>
+                Sunday: Closed
+            </p>
+
+            <p>
+                <strong>Find Us:</strong><br>
+                Thononda Village, Limpopo
+            </p>
+
+        </div>
+
+    </div>
+
+    
+
+        <p>
+            &copy; <span id="current-year">2026</span>
+            ST10514166#DISD1 Nyavhas M Poultry Farm.
+            All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
 <script src="js/script.js" defer></script>
 </body>
 
