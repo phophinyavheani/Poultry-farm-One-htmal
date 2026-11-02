@@ -8,68 +8,105 @@ An external CSS stylesheet called style.css was created in the css folder.
 The stylesheet is linked to the HTML pages using the following code: 
 html <link rel="stylesheet" href="css/style.css">
 
+Improvements Made Based on Part 2 Feedback
 
-1. Project Overview
-Nyavhas M Poultry Farm is a small poultry business established in 2022 in Thononda Village, Limpopo. I developed this website to help customers learn more about the farm, view its products and contact the business.
-The website was created using HTML, CSS and JavaScript.
-2. Improvements from Part 2 to Part 3
-In Part 2 I focused mainly on creating the website pages and designing them using HTML and CSS. In Part 3 I improved the website by adding more functionality and making it easier for customers to use.
-The main improvements include:
-•	JavaScript - Added interactive features to improve the website's functionality.
-•	Form validation - Improved the contact and enquiry forms by checking required fields, email addresses and phone numbers.
-•	Error messages - Added messages to help users correct missing or incorrect information.
-•	Website design - Improved the colours, buttons, forms and footer while keeping the farm's green and gold theme.
-•	Responsive design- Improved the layout so the website can be viewed on computers, tablets and mobile phones.
-•	Interactive map - Used Leaflet to show the areas served by the farm, including Thononda, Tshiheni, Tshithuthuni, Tshiendelu, Mazwimba and Maname.
-•	Image gallery -Improved the product gallery and added a lightbox to view larger images.
-•	SEO - Added or improved page titles, meta descriptions and other search engine information.
-•	Deployment - Prepared the website for publishing online using Netlify or GitHub Pages.
-3. Technologies Used
-•	HTML5 for the website structure.
-•	CSS3 for styling and responsive design.
-•	JavaScript for interactivity and form validation.
-•	Leaflet for the interactive map.
-•	Visual Studio Code for writing and editing code.
-•	GitHub for storing and managing the project.
-•	Netlify for website hosting.
-4. Website Pages
-•	index.html - Home page.
-•	about.html - Information about the farm.
-•	products.html - Poultry products and images.
-•	enquiry.html - Product enquiry form.
-•	contact.html - Contact information, map and contact form.
-•	style.css - Website styling.
-•	script.js - JavaScript functionality.
-•	image - Logo and website images.
-5. Testing
-Before submitting my project, I need to check that:
-•	All pages and navigation links work.
-•	Images and the farm logo display correctly.
-•	Contact and enquiry form validation works.
-•	Error messages appear when required information is missing.
-•	The map, image gallery and lightbox work correctly.
-•	The website displays properly on mobile devices.
-•	The published website link opens successfully.
-6. Changelog
-In Part 3, I worked on the following improvements:
-•	Improved the website created in Part 2.
-•	Added or improved JavaScript functionality.
-•	Improved form validation and error messages.
-•	Updated the website styling and footer.
-•	Improved mobile responsiveness.
-•	Added an interactive map and service-area markers.
-•	Improved the product image gallery.
-•	Updated SEO information.
-•	Prepared the website for online deployment.
-•	Updated the project documentation.
-7. Conclusion
-Part 3 helped me improve my website by adding functionality and making it easier to use. I improved the forms, website design, map, image gallery and responsive layout. These changes aim to help customers find information about Nyavhas M Poultry Farm and contact the business more easily.
-8. References
-•	GitHub (n.d.) GitHub Documentation. Available at: https://docs.github.com/
-•	Leaflet (n.d.) Leaflet Quick Start Guide. Available at: https://leafletjs.com/examples/quick-start/
-•	Netlify (n.d.) Netlify Documentation. Available at: https://docs.netlify.com/
-•	W3Schools (n.d.) HTML Tutorial. Available at: https://www.w3schools.com/html/
-•	W3Schools (n.d.) CSS Tutorial. Available at: https://www.w3schools.com/css/
-•	W3Schools (n.d.) JavaScript Tutorial. Available at: https://www.w3schools.com/js/
+The feedback received from my lecturer for Part 2 highlighted the need for comprehensive website improvements and a detailed changelog. In response, I improved the Nyavhas M Poultry Farm website by adding JavaScript functionality, an interactive Leaflet map showing the farm and its service areas, and validation for the contact and enquiry forms.
+
+I also improved SEO by adding page titles, meta descriptions, keywords and robots metadata. The CSS design, website layout, navigation and footer were updated to make the website more organised and user-friendly. Finally, website testing was carried out to check the forms, map, navigation and layout.
+
+These improvements address my lecturer's feedback and make the website more functional, informative and easier for customers to use.
 
 
+
+ Part 3 Development Updates
+
+ 1. JavaScript functionality
+File updated- `js/script.js`
+
+JavaScript functionality was added to improve the interaction between the website and its visitors. The script was used to support form validation, user feedback messages and the interactive map.
+
+Reason for the change - To improve website functionality and provide visitors with a better experience.
+ 2. Leaflet interactive map
+Files updated- `contact.html`, `css/style.css` and `js/script.js`
+
+Leaflet was integrated into the Contact page to display an interactive map. Markers were added for Thononda, Tshiheni, Tshithuthuni, Tshiendelu, Mazwimba and Maname. Popup messages were included to identify each service area.
+
+CSS styling was added to control the map's height, width, border and positioning.
+
+Reason for the change To help customers locate the farm and understand which communities are served by the business.
+
+ 3. Contact form validation
+Files updated- `contact.html` and `js/script.js`
+
+JavaScript validation was added to the contact form. The form checks the customer's full name, email address, phone number, subject and message. Error messages are displayed when required information is missing or invalid.
+
+Reason for the change- To reduce incorrect or incomplete contact information and guide customers when completing the form.
+
+ 4. Enquiry form improvements
+Files updated- `enquiry.html` and `js/script.js`
+
+The enquiry form was improved to support customer enquiries about the farm's products, including fresh eggs, live chickens and cleaned chicken. Required fields and input validation were included.
+
+Reason for the change- To make it easier for customers to enquire about available poultry products.
+
+ 5. Search Engine Optimisation
+Files updated- Website HTML pages, `robots.txt` and `sitemap.xml`.
+
+SEO metadata was added to the website pages. Page titles, meta descriptions, keywords, author information and robots directives were included. The robots.txt file and sitemap.xml file were also prepared to support search engine crawling and indexing.
+
+**Reason for the change:** To improve the website's search engine information and make its pages easier for search engines to understand.
+
+ 6. CSS design improvements
+File updated - `css/style.css`
+
+The website's CSS was improved to create a consistent design. The green, dark green, light green and gold colours were maintained throughout the website. The map section, forms, content areas and footer were styled to improve readability and presentation.
+
+**Reason for the change:** To make the website more organised, attractive and consistent with the identity of Nyavhas M Poultry Farm.
+
+ 7. Footer improvements
+Files updated- HTML pages and `css/style.css`.
+
+The footer was organised into four sections: Stay Connected With Us, About Us, Support and Get in Touch. A newsletter form, navigation links and business contact information were included.
+
+Reason for the change- To make important business information and website navigation easier for visitors to access.
+
+ 8. Website deployment
+Platform: Netlify
+
+The website was prepared for online deployment using Netlify. This allows the website to be accessed online instead of only running locally on a computer.
+
+Reason for the change- To make the website accessible to customers and demonstrate how a completed website can be published online.
+
+ 9. Website testing
+Areas tested- Navigation, forms, map, layout and interactive features.
+
+The website was checked to identify errors and confirm that its main features work as expected. Form fields were checked using valid and invalid information. The map was checked to confirm that it loads and displays its markers. Website navigation and layout were also reviewed.
+
+Reason for the change- To identify problems and improve the reliability and usability of the website.
+
+ Conclusion
+
+The Part 3 updates improved the Nyavhas M Poultry Farm website by introducing JavaScript functionality, an interactive map, form validation, SEO improvements and a more organised design. The changelog documents the main files updated, the changes made and the reasons for each improvement. These changes demonstrate the progress made after reviewing the feedback from Part 2.
+
+References 
+GitHub (n.d.) GitHub Documentation. Available at: https://docs.github.com/ (Accessed: 
+2 November 2026). 
+Google Search Central (n.d.) SEO Starter Guide. Available at: 
+https://developers.google.com/search/docs/fundamentals/seo-starter-guide 
+(Accessed: 2 November 2026). 
+Leaflet (n.d.) Leaflet Quick Start Guide. Available at: 
+https://leafletjs.com/examples/quick-start/ (Accessed: 2 November 2026). 
+MDN Web Docs (n.d.) Client-side form validation. Available at: 
+https://developer.mozilla.org/en
+US/docs/Learn_web_development/Extensions/Forms/Form_validation (Accessed: 2 
+November 2026). 
+Netlify (n.d.) Netlify Documentation. Available at: https://docs.netlify.com/ (Accessed: 2 
+November 2026). 
+OpenStreetMap contributors (n.d.) Copyright and License. Available at: 
+https://www.openstreetmap.org/copyright (Accessed: 2 November 2026). 
+W3Schools (n.d.) CSS Tutorial. Available at: https://www.w3schools.com/css/ 
+(Accessed: 2 November 2026). 
+W3Schools (n.d.) HTML Tutorial. Available at: https://www.w3schools.com/html/ 
+(Accessed: 2 November 2026). 
+W3Schools (n.d.) JavaScript Tutorial. Available at: https://www.w3schools.com/js/ 
+(Accessed: 2 November 2026).
