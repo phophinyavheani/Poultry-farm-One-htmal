@@ -7,3 +7,5 @@ The technologies Used that are I used for my part 2 are HTML5, Css3, visual stud
 An external CSS stylesheet called style.css was created in the css folder. 
 The stylesheet is linked to the HTML pages using the following code: 
 html <link rel="stylesheet" href="css/style.css">
+
+
