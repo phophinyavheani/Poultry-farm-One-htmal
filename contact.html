@@ -344,6 +344,8 @@
             &copy; <span id="current-year">2026</span>
             ST10514166#DISD1 Nyavhas M Poultry Farm.
             All rights reserved.
+
+            <p id="datetime"></p>
         </p>
 
     </div>
@@ -359,7 +361,30 @@
 
     <script src="JS/script.js"></script>
 
+<script>
+    function updateDateTime() {
+        const now = new Date();
 
+        const options = {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+        };
+
+        document.getElementById("datetime").textContent =
+            now.toLocaleString("en-ZA", options);
+    }
+
+    // Display the date and time immediately
+    updateDateTime();
+
+    // Update the date and time every second
+    setInterval(updateDateTime, 1000);
+</script>
 
 </body>
 
