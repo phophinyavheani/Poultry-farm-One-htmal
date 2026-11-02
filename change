@@ -1,86 +1,80 @@
 
- Improvements Based on Part 2 Feedback
+ Improvements Made Based on Part 2 Feedback
 
-The feedback received for Part 2 was used to identify areas that needed improvement in the Nyavhas M Poultry Farm website. The website was updated to improve its functionality, usability, accessibility and presentation. JavaScript features were introduced to make the website more interactive and user-friendly.
+The feedback received from my lecturer for Part 2 highlighted the need for comprehensive website improvements and a detailed changelog. In response, I improved the Nyavhas M Poultry Farm website by adding JavaScript functionality, an interactive Leaflet map showing the farm and its service areas, and validation for the contact and enquiry forms.
 
-The following improvements were made:
+I also improved SEO by adding page titles, meta descriptions, keywords and robots metadata. The CSS design, website layout, navigation and footer were updated to make the website more organised and user-friendly. Finally, website testing was carried out to check the forms, map, navigation and layout.
 
-1. Interactive Map
+These improvements address my lecturer's feedback and make the website more functional, informative and easier for customers to use.
 
-A Leaflet interactive map was added to the Contact page to help customers locate the farm and view its service areas, including Thononda, Tshiheni, Tshithuthuni, Tshiendelu, Mazwimba and Maname. Markers and pop-up messages help users identify the different locations.
 
-2. Form Validation
 
-JavaScript validation was added to the contact and enquiry forms to help ensure that customers provide the required information. Validation checks help identify missing or incorrectly entered information, such as invalid email addresses and telephone numbers.
+ Part 3 Development Updates
 
-3. Improved User Experience
+ 1. JavaScript functionality
+File updated- `js/script.js`
 
-Error messages and form status messages were included to help users understand what needs to be corrected when completing a form. This makes the forms easier to use and helps reduce incomplete submissions.
+JavaScript functionality was added to improve the interaction between the website and its visitors. The script was used to support form validation, user feedback messages and the interactive map.
 
-4. Search Engine Optimisation (SEO)
+Reason for the change - To improve website functionality and provide visitors with a better experience.
+ 2. Leaflet interactive map
+Files updated- `contact.html`, `css/style.css` and `js/script.js`
 
-Page titles, meta descriptions, keywords, author information and robots metadata were included in the website pages. These improvements provide search engines with relevant information about the website and its content.
+Leaflet was integrated into the Contact page to display an interactive map. Markers were added for Thononda, Tshiheni, Tshithuthuni, Tshiendelu, Mazwimba and Maname. Popup messages were included to identify each service area.
 
-5. Website Styling and Responsiveness
+CSS styling was added to control the map's height, width, border and positioning.
 
-The CSS styling was improved to maintain consistent colours, readable text and an organised layout. The map section was also styled to fit the website's green colour theme and improve its presentation.
+Reason for the change To help customers locate the farm and understand which communities are served by the business.
 
-6. Contact Information
+ 3. Contact form validation
+Files updated- `contact.html` and `js/script.js`
 
-The Contact page was organised to display the farm's business information, operating hours, service areas and contact form. This helps customers find important information more easily.
+JavaScript validation was added to the contact form. The form checks the customer's full name, email address, phone number, subject and message. Error messages are displayed when required information is missing or invalid.
 
-7. Footer Improvements
+Reason for the change- To reduce incorrect or incomplete contact information and guide customers when completing the form.
 
-The footer was organised into sections for the newsletter, About Us, Support and Get in Touch. It includes navigation links and business contact information to make it easier for customers to access important pages and contact the farm.
+ 4. Enquiry form improvements
+Files updated- `enquiry.html` and `js/script.js`
 
-These improvements aim to make the Nyavhas M Poultry Farm website more informative, accessible and user-friendly. They also support the business by helping customers learn about its products, identify its service areas and make enquiries.
+The enquiry form was improved to support customer enquiries about the farm's products, including fresh eggs, live chickens and cleaned chicken. Required fields and input validation were included.
 
- Changelog – Nyavhas M Poultry Farm Website
+Reason for the change- To make it easier for customers to enquire about available poultry products.
 
- Part 3 Updates
+ 5. Search Engine Optimisation
+Files updated- Website HTML pages, `robots.txt` and `sitemap.xml`.
 
-Interactive map- A Leaflet map was added to the Contact page with markers for the farm and its service areas. This improvement helps customers identify the areas served by the business.
+SEO metadata was added to the website pages. Page titles, meta descriptions, keywords, author information and robots directives were included. The robots.txt file and sitemap.xml file were also prepared to support search engine crawling and indexing.
 
-Map navigation - Pop-up messages and automatic map zoom were added to make the map easier to navigate and allow users to view the listed locations.
+**Reason for the change:** To improve the website's search engine information and make its pages easier for search engines to understand.
 
-Contact and enquiry forms- JavaScript validation was introduced to check required fields, email addresses and telephone numbers. This helps users identify errors before submitting their information.
+ 6. CSS design improvements
+File updated - `css/style.css`
 
-Form feedback - Error messages and status messages were included to provide users with feedback when information is missing or incorrectly entered.
+The website's CSS was improved to create a consistent design. The green, dark green, light green and gold colours were maintained throughout the website. The map section, forms, content areas and footer were styled to improve readability and presentation.
 
-SEO improvements - Page titles, meta descriptions, keywords and robots metadata were added to provide search engines with information about the website.
+**Reason for the change:** To make the website more organised, attractive and consistent with the identity of Nyavhas M Poultry Farm.
 
-Contact page organisation - Business details, operating hours and service-area information were arranged in clear sections to help customers find the information they need.
+ 7. Footer improvements
+Files updated- HTML pages and `css/style.css`.
 
-CSS styling - The map and location section were styled to match the website's green theme and improve readability and presentation.
+The footer was organised into four sections: Stay Connected With Us, About Us, Support and Get in Touch. A newsletter form, navigation links and business contact information were included.
 
-Footer improvements - The footer was organised into newsletter, About Us, Support and Get in Touch sections. This improves navigation and makes business information easier to access.
+Reason for the change- To make important business information and website navigation easier for visitors to access.
 
- Testing and Future Improvements
+ 8. Website deployment
+Platform: Netlify
 
-The updated website should be tested on desktop and mobile devices to check that its layout and features work correctly. The contact and enquiry forms should be tested using both valid and invalid information. The Leaflet map should also be tested to confirm that it loads correctly and that its markers and pop-up messages work as expected.
+The website was prepared for online deployment using Netlify. This allows the website to be accessed online instead of only running locally on a computer.
 
-The map coordinates should be verified against the actual village locations before submission. If the forms need to deliver messages directly to the business, a suitable backend or form-handling service will also be required.
+Reason for the change- To make the website accessible to customers and demonstrate how a completed website can be published online.
 
-Further improvements could include accessibility testing, additional SEO checks and testing the deployed website to confirm that all pages, links, forms and interactive features work correctly.
+ 9. Website testing
+Areas tested- Navigation, forms, map, layout and interactive features.
 
-Note: Keep only the changes that have actually been implemented and tested in your website. To achieve the highest rubric mark, connect each improvement to the specific feedback received in Part 2 and include screenshots or other evidence where possible.
+The website was checked to identify errors and confirm that its main features work as expected. Form fields were checked using valid and invalid information. The map was checked to confirm that it loads and displays its markers. Website navigation and layout were also reviewed.
 
-References
+Reason for the change- To identify problems and improve the reliability and usability of the website.
 
-GitHub (n.d.) GitHub Documentation. Available at: https://docs.github.com/ (Accessed: 2 November 2026).
+ Conclusion
 
-Google Search Central (n.d.) SEO Starter Guide. Available at: https://developers.google.com/search/docs/fundamentals/seo-starter-guide (Accessed: 2 November 2026).
-
-Leaflet (n.d.) Leaflet Quick Start Guide. Available at: https://leafletjs.com/examples/quick-start/ (Accessed: 2 November 2026).
-
-MDN Web Docs (n.d.) Client-side form validation. Available at: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation (Accessed: 2 November 2026).
-
-Netlify (n.d.) Netlify Documentation. Available at: https://docs.netlify.com/ (Accessed: 2 November 2026).
-
-OpenStreetMap contributors (n.d.) Copyright and License. Available at: https://www.openstreetmap.org/copyright (Accessed: 2 November 2026).
-
-W3Schools (n.d.) CSS Tutorial. Available at: https://www.w3schools.com/css/ (Accessed: 2 November 2026).
-
-W3Schools (n.d.) HTML Tutorial. Available at: https://www.w3schools.com/html/ (Accessed: 2 November 2026).
-
-W3Schools (n.d.) JavaScript Tutorial. Available at: https://www.w3schools.com/js/ (Accessed: 2 November 2026).
+The Part 3 updates improved the Nyavhas M Poultry Farm website by introducing JavaScript functionality, an interactive map, form validation, SEO improvements and a more organised design. The changelog documents the main files updated, the changes made and the reasons for each improvement. These changes demonstrate the progress made after reviewing the feedback from Part 2.
