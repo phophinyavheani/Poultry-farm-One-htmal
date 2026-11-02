@@ -8,6 +8,7 @@ An external CSS stylesheet called style.css was created in the css folder.
 The stylesheet is linked to the HTML pages using the following code: 
 html <link rel="stylesheet" href="css/style.css">
 
+
 1. Project Overview
 Nyavhas M Poultry Farm is a small poultry business established in 2022 in Thononda Village, Limpopo. I developed this website to help customers learn more about the farm, view its products and contact the business.
 The website was created using HTML, CSS and JavaScript.
@@ -70,5 +71,5 @@ Part 3 helped me improve my website by adding functionality and making it easier
 •	W3Schools (n.d.) HTML Tutorial. Available at: https://www.w3schools.com/html/
 •	W3Schools (n.d.) CSS Tutorial. Available at: https://www.w3schools.com/css/
 •	W3Schools (n.d.) JavaScript Tutorial. Available at: https://www.w3schools.com/js/
-Accessed: 2 November 2026.
+
 
