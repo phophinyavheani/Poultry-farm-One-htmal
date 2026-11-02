@@ -1,0 +1,86 @@
+
+ Improvements Based on Part 2 Feedback
+
+The feedback received for Part 2 was used to identify areas that needed improvement in the Nyavhas M Poultry Farm website. The website was updated to improve its functionality, usability, accessibility and presentation. JavaScript features were introduced to make the website more interactive and user-friendly.
+
+The following improvements were made:
+
+1. Interactive Map
+
+A Leaflet interactive map was added to the Contact page to help customers locate the farm and view its service areas, including Thononda, Tshiheni, Tshithuthuni, Tshiendelu, Mazwimba and Maname. Markers and pop-up messages help users identify the different locations.
+
+2. Form Validation
+
+JavaScript validation was added to the contact and enquiry forms to help ensure that customers provide the required information. Validation checks help identify missing or incorrectly entered information, such as invalid email addresses and telephone numbers.
+
+3. Improved User Experience
+
+Error messages and form status messages were included to help users understand what needs to be corrected when completing a form. This makes the forms easier to use and helps reduce incomplete submissions.
+
+4. Search Engine Optimisation (SEO)
+
+Page titles, meta descriptions, keywords, author information and robots metadata were included in the website pages. These improvements provide search engines with relevant information about the website and its content.
+
+5. Website Styling and Responsiveness
+
+The CSS styling was improved to maintain consistent colours, readable text and an organised layout. The map section was also styled to fit the website's green colour theme and improve its presentation.
+
+6. Contact Information
+
+The Contact page was organised to display the farm's business information, operating hours, service areas and contact form. This helps customers find important information more easily.
+
+7. Footer Improvements
+
+The footer was organised into sections for the newsletter, About Us, Support and Get in Touch. It includes navigation links and business contact information to make it easier for customers to access important pages and contact the farm.
+
+These improvements aim to make the Nyavhas M Poultry Farm website more informative, accessible and user-friendly. They also support the business by helping customers learn about its products, identify its service areas and make enquiries.
+
+ Changelog – Nyavhas M Poultry Farm Website
+
+ Part 3 Updates
+
+Interactive map- A Leaflet map was added to the Contact page with markers for the farm and its service areas. This improvement helps customers identify the areas served by the business.
+
+Map navigation - Pop-up messages and automatic map zoom were added to make the map easier to navigate and allow users to view the listed locations.
+
+Contact and enquiry forms- JavaScript validation was introduced to check required fields, email addresses and telephone numbers. This helps users identify errors before submitting their information.
+
+Form feedback - Error messages and status messages were included to provide users with feedback when information is missing or incorrectly entered.
+
+SEO improvements - Page titles, meta descriptions, keywords and robots metadata were added to provide search engines with information about the website.
+
+Contact page organisation - Business details, operating hours and service-area information were arranged in clear sections to help customers find the information they need.
+
+CSS styling - The map and location section were styled to match the website's green theme and improve readability and presentation.
+
+Footer improvements - The footer was organised into newsletter, About Us, Support and Get in Touch sections. This improves navigation and makes business information easier to access.
+
+ Testing and Future Improvements
+
+The updated website should be tested on desktop and mobile devices to check that its layout and features work correctly. The contact and enquiry forms should be tested using both valid and invalid information. The Leaflet map should also be tested to confirm that it loads correctly and that its markers and pop-up messages work as expected.
+
+The map coordinates should be verified against the actual village locations before submission. If the forms need to deliver messages directly to the business, a suitable backend or form-handling service will also be required.
+
+Further improvements could include accessibility testing, additional SEO checks and testing the deployed website to confirm that all pages, links, forms and interactive features work correctly.
+
+Note: Keep only the changes that have actually been implemented and tested in your website. To achieve the highest rubric mark, connect each improvement to the specific feedback received in Part 2 and include screenshots or other evidence where possible.
+
+References
+
+GitHub (n.d.) GitHub Documentation. Available at: https://docs.github.com/ (Accessed: 2 November 2026).
+
+Google Search Central (n.d.) SEO Starter Guide. Available at: https://developers.google.com/search/docs/fundamentals/seo-starter-guide (Accessed: 2 November 2026).
+
+Leaflet (n.d.) Leaflet Quick Start Guide. Available at: https://leafletjs.com/examples/quick-start/ (Accessed: 2 November 2026).
+
+MDN Web Docs (n.d.) Client-side form validation. Available at: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation (Accessed: 2 November 2026).
+
+Netlify (n.d.) Netlify Documentation. Available at: https://docs.netlify.com/ (Accessed: 2 November 2026).
+
+OpenStreetMap contributors (n.d.) Copyright and License. Available at: https://www.openstreetmap.org/copyright (Accessed: 2 November 2026).
+
+W3Schools (n.d.) CSS Tutorial. Available at: https://www.w3schools.com/css/ (Accessed: 2 November 2026).
+
+W3Schools (n.d.) HTML Tutorial. Available at: https://www.w3schools.com/html/ (Accessed: 2 November 2026).
+
+W3Schools (n.d.) JavaScript Tutorial. Available at: https://www.w3schools.com/js/ (Accessed: 2 November 2026).
