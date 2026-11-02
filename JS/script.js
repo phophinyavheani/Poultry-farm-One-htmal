@@ -1,5 +1,4 @@
 
-
 document.addEventListener("DOMContentLoaded", function () {
 
     //  AUTOMATIC COPYRIGHT YEAR//
@@ -523,6 +522,96 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (event.key === "ArrowRight") {
             showImage(currentIndex + 1);
         }
+    });
+
+});
+
+
+
+// ==========================================
+// NYAVHAS M POULTRY FARM - LEAFLET MAP
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Get the map container from contact.html
+    const mapContainer = document.getElementById("farm-map");
+
+    // Stop if the map container or Leaflet library is unavailable
+    if (!mapContainer || typeof L === "undefined") {
+        return;
+    }
+
+    // Prevent the map from being initialised more than once
+    if (mapContainer._leaflet_id) {
+        return;
+    }
+
+    // Create the map and set the starting location to Thononda
+    const map = L.map("farm-map").setView([-22.95, 30.45], 12);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Farm and service area locations
+    // IMPORTANT: These coordinates are approximate placeholders.
+    // Verify the exact village coordinates before submitting.
+
+    const locations = [
+        {
+            name: "Nyavhas M Poultry Farm - Thononda",
+            coordinates: [-22.95, 30.45],
+            description: "Main farm and collection point."
+        },
+        {
+            name: "Tshiheni",
+            coordinates: [-22.96, 30.43],
+            description: "Nyavhas M Poultry Farm service area."
+        },
+        {
+            name: "Tshithuthuni",
+            coordinates: [-22.94, 30.47],
+            description: "Nyavhas M Poultry Farm service area."
+        },
+        {
+            name: "Tshiendelu",
+            coordinates: [-22.97, 30.44],
+            description: "Nyavhas M Poultry Farm service area."
+        },
+        {
+            name: "Mazwimba",
+            coordinates: [-22.93, 30.46],
+            description: "Nyavhas M Poultry Farm service area."
+        },
+        {
+            name: "Maname",
+            coordinates: [-22.98, 30.42],
+            description: "Nyavhas M Poultry Farm service area."
+        }
+    ];
+
+    // Add a marker and popup for every location
+    locations.forEach(function (location) {
+
+        L.marker(location.coordinates)
+            .addTo(map)
+            .bindPopup(
+                "<strong>" + location.name + "</strong><br>" +
+                location.description
+            );
+
+    });
+
+    // Automatically adjust the map to show all markers
+    const markerLocations = locations.map(function (location) {
+        return location.coordinates;
+    });
+
+    map.fitBounds(markerLocations, {
+        padding: [30, 30]
     });
 
 });
