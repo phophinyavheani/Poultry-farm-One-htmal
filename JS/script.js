@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 
     // Confirm this email address is correct before using the forms.
-    const recipient = "popzela@67gmai.com";
+    const recipient = "popzela@67gmail.com";
 
     document.querySelectorAll(".validated-form").forEach(
         function (form) {
@@ -528,9 +528,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// ==========================================
-// NYAVHAS M POULTRY FARM - LEAFLET MAP
-// ==========================================
+// NYAVHAS M POULTRY FARM - LEAFLET MAP // 
 
 document.addEventListener("DOMContentLoaded", function () {
 
